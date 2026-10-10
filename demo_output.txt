@@ -1,0 +1,71 @@
+ANSAN CASH-ECONOMY ESTIMATOR (Real Mode, CC0, AI)
+Monte Carlo draws: 100,000  seed: 20261010
+
+[1] Korea shadow economy, published (% GDP)
+  19.83%  2015                               Medina & Schneider, IMF WP/18/17, MIMIC model, Korea 2015
+          https://www.yna.co.kr/view/AKR20180211062800002
+  26.40%  1991-2015 avg (min 22.8, max 30.0) Medina & Schneider, CESifo WP 6430 / IMF WP/18/17, Korea average
+          https://www.econstor.eu/bitstream/10419/161869/1/cesifo1_wp6430.pdf
+  24.70%  2010                               F. Schneider estimate (widely cited, used by 2013 govt policy)
+          https://biz.heraldcorp.com/article/1241940
+  17.10%  2008                               KIPF brief, modified DYMIMIC model
+          https://exa.ai/library/publication/99vr14m1bzp
+   8.00%  2015                               KIPF (조세재정연구원) 2017, tax-gap / currency-demand based, 124.7조원
+          https://www.khan.co.kr/article/201702171558001
+   3.85%  2011 (range 3.4-4.3)               KIPF 2017: activity hidden purely for tax evasion, 47-58조원
+          https://biz.heraldcorp.com/article/1241940
+  NOTE: newest published figure is for 2015. Methods disagree about 3x (8.0% vs 24.7%).
+  ESTIMATE Ansan hidden output = GRDP2022 (28.58조원) x mix(%) x GUESS ratio U(0.8,1.2)
+    share : p5 7.0% | median 18.1% | p95 27.5%
+    size  : p5 2.0 조원 | median 5.2 조원 | p95 7.9 조원
+
+[2] Remittances
+    14,330,000,000 USD      2024        World Bank BM.TRF.PWKR.CD.DT, Korea personal remittances paid (ALL residents, not only foreigners)
+          https://data.worldbank.org/indicator/BM.TRF.PWKR.CD.DT
+     3,489,600,000 USD      2024        Bank of Korea data to National Assembly: foreign workers' remittances home (2020-24 total 17.63B USD)
+          https://news.tf.co.kr/read/economy/2252761.htm
+       854,000,000 USD      2018        Licensed small-sum overseas remittance firms, total 2018 (no newer official annual total found)
+          http://www.gfr.co.kr/news/articleView.html?idxno=11642
+         1,606,633 persons  Nov 2025    Ministry of Justice monthly stats: registered foreigners, Korea
+          https://www.yna.co.kr/view/AKR20251226090200371
+            38,398 persons  Nov 2025    MoJ: registered foreigners, Ansan Danwon-gu only
+          https://www.yna.co.kr/view/AKR20251226090200371
+            93,613 persons  2024-11-01  Ansan city multicultural/foreign household stats: foreign population (broader admin definition, 13.3% of city)
+          https://www.yna.co.kr/view/AKR20260130066500061
+  ESTIMATE Ansan foreigners = U(Danwon 38,398, city 93,613)
+    Ansan share of national: p5 2.6% | median 4.1% | p95 5.7%
+  ESTIMATE A = BoK worker remit x share x GUESS mix U(0.8,1.4)
+    p5 91.9 M USD | median 157.5 M USD | p95 246.9 M USD
+  ESTIMATE B = WB paid x GUESS foreign share U(0.25,0.6) x share
+    p5 126.6 M USD | median 236.8 M USD | p95 410.4 M USD
+  ESTIMATE C = people x GUESS employ U(.55,.75) x 2.62M KRW x 12 x U(23.2%,56.5%) / GUESS FX U(1300,1450)
+    p5 192.9 M USD | median 369.5 M USD | p95 655.2 M USD
+  C runs high: the 23.2-56.5% share includes DOMESTIC transfers and the wage is a worker average. Treat A as central, C as upper.
+  NOTE: these are mostly LEGAL, taxed wages sent home. A remittance is not evidence of a shadow economy.
+
+[3] Licensed businesses (legal categories, no names)
+  Ansan food-service premises Jun 2026: 10,719; Danwon-gu 6,090 (56.8% of city)
+  Danwon entertainment bars 326 + small bars 113 = 7.2% of food premises, 15.2 per 10k residents
+  Ansan hygiene premises (barber/beauty/laundry) 2026: 2,793
+  source: https://www.ansan.go.kr/danwongu/common/cntnts/selectContents.do?cntnts_id=C0000295
+  GAP: no official Ansan karaoke-room (노래연습장) count found; licensed counts say nothing about illegality.
+
+[4] CCTV / data claims
+  - KT Telecop GiGAeyes offers people-count and heatmap analytics
+      DOCUMENTED - sold as a paid option to the subscribing shop for its own marketing; nothing found about resale to REITs or planners
+      https://www.kttelecop.co.kr/front/service/K0201.jsp
+  - Security firms sell licence-plate dwell logs to insurers / asset evaluators
+      UNSUPPORTED - no source found
+      searched 2026-10-10, no hits
+  - Telcos license cell-tower handshakes to credit scoring / ad brokers
+      UNSUPPORTED as stated - no source found this round; aggregate pseudonymized data use is legal only under limits below
+      searched 2026-10-10, no hits
+  - PIPA lets pseudonymized data be processed without consent
+      DOCUMENTED - only for statistics, scientific research, public-interest archiving; re-identification banned (PIPC guideline)
+      https://www.privacy.go.kr/cmm/fms/FileDown.do?atchFileId=ATCH_000000000876685&fileSn=1
+  - Telco privacy enforcement exists
+      DOCUMENTED - PIPC fined LG U+ 6.8B KRW + 27M KRW (2023) for a customer-data leak and weak safeguards; 75M KRW (2020) for weak agency oversight. Neither case was about selling CCTV or tower data
+      https://www.yna.co.kr/view/AKR20201209091800530 ; https://casenote.kr/%EA%B0%9C%EC%9D%B8%EC%A0%95%EB%B3%B4%EB%B3%B4%ED%98%B8%EC%9C%84%EC%9B%90%ED%9A%8C/%EC%A0%9C2023-012-153%ED%98%B8
+  - SECOM (S-1) sells data from its cameras
+      NOT CHECKED this round - no claim either way
+      -
